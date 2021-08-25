@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :user_events 
-  resources :users, only: [:create]
+  resources :users
   resources :user_brands
   resources :brands
   resources :brand_events

@@ -6,4 +6,12 @@ class BrandEventsController < ApplicationController
     brand_events = BrandEvent.all
     render json:brand_events
     end
+    def create 
+     brand_events = BrandEvent.create(brandevent_params)
+     render json:brand_events
+    end
+private 
+   def brandevent_params 
+     params.permit(:user_id,:event_id)
+   end
 end

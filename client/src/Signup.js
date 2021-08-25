@@ -15,16 +15,16 @@ function Signup({setCurrentUser}){
   async function handleSubmit(e){
     e.preventDefault()
     const user = { 
-        user_name:username,
         first_name:firstname,
         last_name:lastname,
         email,
         password,
+        username,
         
     }
     const res = await fetch(`http://localhost:3000/users`,{
         method: 'POST',
-        credentials: "include",
+        // credentials: "include",
         headers: {
             'Content-Type': 'application/json'
         },
@@ -34,7 +34,6 @@ function Signup({setCurrentUser}){
     if(res.ok){
         console.log(userData)
         setCurrentUser(userData)
-        debugger
         history.push('/')
     } else {
         setErrors(userData.message)
@@ -72,7 +71,7 @@ function Signup({setCurrentUser}){
                     name="email"
                     onChange={(e) => setEmail(e.target.value)}></Input>
                         <Input
-                    type="text"
+                    type="password"
                     placeholder="Password"
                     value={password}
                     name="password"

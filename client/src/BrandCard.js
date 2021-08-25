@@ -75,7 +75,7 @@ const handleExpandClick = () => {
   setExpanded(!expanded);
 };
     return(
-        <div className="cardContainer">
+        <div className="cardContainer"  style={{flex:"50%"}}>
              <Card className={classes.root}>
       <CardHeader
         

@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
     has_many :user_brands
     has_many :brands, through: :user_brands
+    has_many :user_events
+    has_many :events, through: :user_events
 
      # Returns the hash digest of the given string.
      def self.digest(string)

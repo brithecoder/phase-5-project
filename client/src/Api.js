@@ -12,4 +12,3 @@ return fetch('${API_BASE_URL} ${Path}?${query}'),{
     }
 }
 
-}

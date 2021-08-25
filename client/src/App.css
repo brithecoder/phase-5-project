@@ -2,36 +2,49 @@
   text-align: center;
 }
 .container{
- width:100%;
+ /* width:100%; */
+ margin-bottom: none;
 }
 .header{
   display:flex;
   align-items: center;
   background-color: #7f4107;
   padding:5px 10%;
+  margin-bottom: none;
+}
+.UserWelcome{
+  color: white;
+  padding-left: 130px;
 }
 .title{
-  font-size:35px;
+  font-size:40px;
   color: white;
   padding-right: 300px;
   font-family:'Lato',sans-serif;
 }
+.TextLine{
+  text-decoration: none;
+}
 .logoPicture{
-  padding: 20% ;
+  /* padding: 20% ; */
   /* padding-bottom:0px; */
   background-image:url('https://media1.popsugar-assets.com/files/thumbor/Cf51_SDo5E5F3vSTjZWxtgtOGRs/0x745:6951x3609/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/06/08/884/n/46794750/d915b5995ede9bcc92f2b3.05818448_.jpg');
-  width:535px;
+  width:100vw;
+  height:40vw;
    background-size: contain; 
   background-repeat: no-repeat; 
   font-family:'Lato',sans-serif;
-  text-align: right;
-
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 700;
-  color:white;
+  color:#FFFFF0;
+  
 }
 .WPC{
-  text-align:right; 
+  text-align: left;
+  margin-top: 0px;
+  padding-top: 310px;
+  padding-left: 250px;
+  text-shadow: 6px grey;
 }
 .buttonCss{
   background-color: #7f4107; /* Green */
@@ -52,5 +65,40 @@
  padding-top: 10px;
 }
 .search{
-  color: #f7dcc5;
+  color: #FFFFF0;
+  padding-left:70px;
+}
+.searchField{
+  padding-left:70px;
+  border: 6px solid #FF6666;
+  background-color:#CC6601;
+}
+.Yelp{
+  border: 6px solid #FF6666;
+  border-radius: 25px;
+  background-color: #FFFFF0;
+  list-style-type: none;
+}
+.YelpTitle{
+  font-size:40px;
+}
+.yelpList{
+  list-style-type: none;
+}
+.yelpPictureList{
+ background-size: contain;
+}
+.brandpageTitle{
+  color:  #FFFFF0;
+  font-size: 80px;
+  text-align: right;
+  padding:10px 10px 10px 10px;
+  border:6px solid #FF6666;
+  border-radius:10px;
+  background-color:#CC6601;
+}
+
+.eventGrid{
+  margin:70px;
+  padding:10px;
 }

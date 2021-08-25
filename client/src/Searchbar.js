@@ -56,13 +56,15 @@ const states =[
     {title:'Wyoming'},
 ]
 
-function Searchbar() {
-    const handleSearchChange=(title) => {
-      console.log(title)
-    }
+function Searchbar({setFilterState}) {
+
+   // const[search,setSearch] = useState('')
+   //  const handleSearchChange=(e) => {
+   //       console.log(e.target.innerText)
+   //  }
     
     return(
-       <div>
+       <div  style={{flex:"50%"}}  className="searchField">
            <div style={{ width: 300 }}>
              <h2 className="search">Search for a Location Near You...</h2>
              {/* <Autocomplete 
@@ -78,7 +80,8 @@ function Searchbar() {
                    />
                 )}
              /> */}
-             <Autocomplete onChange={(e)=> handleSearchChange(this)}
+             <Autocomplete onChange={(e)=> setFilterState(e.target.innerText)} 
+               onInputChange={(e)=> setFilterState(e.target.innerText)}
                 freeSolo
                 id="free-solo-2-demo"
                 disableClearable

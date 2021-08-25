@@ -36,7 +36,10 @@ function Login({setCurrentUser}){
 
     return (
         <>
-           
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
             <form onSubmit={handleSubmit}>
                 <h1>Log in</h1>
                 <Input
@@ -46,13 +49,14 @@ function Login({setCurrentUser}){
                     name="username"
                     onChange={(e) => setUserName(e.target.value)}
                 ></Input>
+                <br></br>
                 <Input
-                    type="text"
+                    type="password"
                     placeholder="Password"
                     value={password}
                     name="password"
                     onChange={(e) => setPassword(e.target.value)}></Input>
-        
+                   <br></br>
                 <Input submit type="submit" value="Log in"></Input>
                 {errors?errors.map(error => <div>{error}</div>):null}
               </form>
