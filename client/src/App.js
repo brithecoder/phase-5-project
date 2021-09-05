@@ -10,7 +10,7 @@ import BrandPage from './BrandPage';
 import ExplorePage from './ExplorePage';
 import { NavLink, useHistory } from 'react-router-dom';
 import Navbar from './Navbar';
-import EventModal from './EventModal'
+import Userinfo from './Userinfo';
 import { 
   BrowserRouter as Router,
   Switch, 
@@ -47,19 +47,21 @@ function App() {
        }
 
 
-       useEffect(() => {
-        fetch("/me",
-        {
-          credentials: "include",
-          method: "GET"
-        }).then((response) => {
-          if (response.ok) {
-            response.json().then((user) => setCurrentUser(user));
-          }
-        });
-      }, []);
+      //  useEffect(() => {
+      //   fetch("/me",
+      //   {
+      //     credentials: "include",
+      //     method: "GET"
+      //   }).then((response) => {
+      //     console.log(response)
+      //     if (response.ok) {
+      //       response.json().then((user) => setCurrentUser(user));
+      //     }
+      //   });
+      // }, []);
     
     console.log(filterState)
+
     const filterfunction = (brand) =>{
       if (filterState === ""){
          return true
@@ -73,22 +75,10 @@ function App() {
     function onLogout() {
       setCurrentUser(null);
     }
-    const handleNameClickTwo = ()=>{
-         if (currentUser.username === user.username)
-         return true
+    const handleNameClickTwo = (currentUser) => {
+      console.log(currentUser)
     }
-    console.log(user)
-
-
-    const handleEventClickTwo = (event)=> {
-      console.log(event)
-       console.log(currentUser)
-
-      //  <div>
-      // <EventModal /> 
-      // </div>
-    }
-
+  
     
   return (
     <div className="App">
@@ -107,7 +97,7 @@ function App() {
             </div>
         </Route> 
         <Route exact path="/explorepage">
-           <BrandContainer brands={brands.sort(sortfunction)} HandleBrandClickTwo={HandleBrandClickTwo}/>
+           <ExplorePage brands={brands.sort(sortfunction)}  brands={brands} HandleBrandClickTwo={HandleBrandClickTwo}   currentBrand={currentBrand} currentUser={currentUser}/>
         </Route>
         <Route exact path="/signup">
             <Signup setCurrentUser={setCurrentUser}/>
@@ -116,9 +106,11 @@ function App() {
            <Login setCurrentUser={setCurrentUser}/>
         </Route> 
         <Route exact path="/brandpage">
-            <BrandPage  currentBrand={currentBrand} handleEventClickTwo={handleEventClickTwo} />
+            <BrandPage  currentBrand={currentBrand} currentUser={currentUser} />
         </Route>
-            
+          <Route exact path= "/userinfo">
+           {currentUser ? <Userinfo currentUser={currentUser}  /> : <Userinfo /> }
+            </Route>
       </Switch>
         {/* </div> */}
     </div>

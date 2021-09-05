@@ -102,3 +102,41 @@
   margin:70px;
   padding:10px;
 }
+
+.explorePagetitle{ 
+ font-size:40px;
+ color: #FFFFF0;
+ border: 6px solid #FF6666;
+ background-color:#CC6601;
+ text-align: left;
+}
+.ExplorepageBrands{
+  text-align: center;
+}
+
+.MyProfile{
+  font-size: 60px;
+   color: #FFFFF0;
+}
+.userInfoList{
+  list-style-type: none;
+  font-size: 30px;
+}
+.boldtext{
+  font-weight: bold;
+}
+.Userinfogrid{
+  text-align: center;
+  padding-right: 20px;
+  border: 6px solid #FF6666;
+
+}
+.userinfodiv{
+  border: 6px solid #FF6666;
+  border-radius:15px;
+  background-color:#CC6601;
+}
+.EventSubtitle{
+  font-size: 50px;
+   color: #FFFFF0;
+}

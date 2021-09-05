@@ -27,7 +27,9 @@ function Navbar({currentUser,onLogout,handleNameClickTwo}){
         <h2 className="title"> Ninalem</h2>
         </NavLink>
         <br></br>
-        {currentUser? <button className="UserWelcome buttonCss" onClick={handleNameClick}> Hello, {currentUser.username}</button> : null } 
+        <NavLink to ="/Userinfo">
+        {currentUser? <button className="UserWelcome buttonCss" onClick={() => handleNameClick(currentUser)}> Hello, {currentUser.username}</button> : null } 
+        </NavLink>
         <NavLink to='/ExplorePage'>
         <button className="buttonCss">Explore</button>
         </NavLink>

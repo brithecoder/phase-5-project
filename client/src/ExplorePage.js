@@ -1,9 +1,12 @@
 import React from "react";
+import BrandCard from "./BrandCard";
 
-function ExplorePage(){
+function ExplorePage({brands,currentBrand,HandleBrandClickTwo }){
+  console.log(brands)
     return(
         <div>
-           <h2>This is the explore Page</h2>
+           <h1 className="explorePagetitle">Explore Popular Locations</h1>
+           {brands.map((brand)=> <BrandCard key={brand.id} brand={brand} HandleBrandClickTwo={HandleBrandClickTwo}  />)}
         </div>
     )
   }

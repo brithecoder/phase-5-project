@@ -66,7 +66,7 @@ function Searchbar({setFilterState}) {
     return(
        <div  style={{flex:"50%"}}  className="searchField">
            <div style={{ width: 300 }}>
-             <h2 className="search">Search for a Location Near You...</h2>
+             <h2 className="search">Search For Locations Near You...</h2>
              {/* <Autocomplete 
                 freeSolo
                 id="free-solo-demo"

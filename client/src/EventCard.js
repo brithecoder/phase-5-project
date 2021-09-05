@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -19,30 +19,30 @@ const useStyles = makeStyles({
 
 
 
-function EventCard({event,handleEventClickTwo,currentBrand}){
+function EventCard({event,handleEventClickTwo,currentBrand,currentUser}){
+  const [eventClick,setHandleEvent]=useState(false)
   const classes = useStyles();
-    // console.log(event)
-  const handleEventClick = (event) => {
     console.log(event)
-     handleEventClickTwo(event)
-     }
-
-
-    //  async function handleAddEvent(e){
-    //   e.preventDefault();
-    //   const user_event = {
-    //       user_id: 1,
-    //       event_id: 1
-    //   }
-    //   const res = await fetch(`/user_events`, {
-    //       method: "POST",
-    //       headers: {
-    //           "Content-Type": "application/json"
-    //       },
-    //       body: JSON.stringify(user_event)
-    //   });
-
-
+  
+     async function handleAddEvent(e){
+      e.preventDefault();
+      const user_event = {
+          user_id: currentUser.id,
+          event_id: event.id
+      }
+      const res = await fetch(`http://localhost:3000/user_events`, {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(user_event)
+      });
+       
+    }
+    const handleEventClick = () =>{
+      return setHandleEvent === true
+    }
+  
   const moment = require('moment');
   let date = (moment(event.date))
   let eventdate =(date._d)
@@ -71,9 +71,9 @@ function EventCard({event,handleEventClickTwo,currentBrand}){
         <Button size="small" color="primary" >
           {event.joins} others attending
         </Button>
-        <Button size="small" color="primary" onClick={()=>handleEventClick()}>
-          Join
-        </Button>
+      {currentUser ? <Button size="small" color="primary" onClick={handleAddEvent} OnClick={handleEventClick}>
+          {eventClick ? "Unjoin": "Join"}
+        </Button> :null }
       </CardActions>
     </Card>
          </Grid>

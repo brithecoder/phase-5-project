@@ -7,7 +7,7 @@ import YelpPictureContainer from "./YelpPictureContainer";
 const API_BASE_URL ='https://api.yelp.com/v3';
 
 
-function BrandPage({currentBrand,handleEventClickTwo}){
+function BrandPage({currentBrand,handleEventClickTwo,currentUser}){
     const[business,setBusiness]=useState([])
     const [events,setEvents]=useState([])
 
@@ -53,10 +53,10 @@ fetch('http://localhost:3000/brand_events')
     : null}
     <div>
         <div className="EventsonBrandpage">
-        <h2> Events </h2>
+        <h2 className="eventsTitle"> Events </h2>
             <Grid container spacing={4}>
             {/* <Grid> */}
-            {currentBrand.events.map((event)=> <EventCard  currentBrand={currentBrand} event={event} handleEventClickTwo={handleEventClickTwo} />)} 
+            {currentBrand.events.map((event)=> <EventCard  currentBrand={currentBrand} event={event} handleEventClickTwo={handleEventClickTwo} currentUser={currentUser}/>)} 
             {/* </Grid> */}
             </Grid>
         </div>
