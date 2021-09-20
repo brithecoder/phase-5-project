@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import env from "react-dotenv";
 import Grid from "@material-ui/core/Grid"
 import EventCard from "./EventCard";
 import YelpPictureContainer from "./YelpPictureContainer";
@@ -12,14 +13,14 @@ function BrandPage({currentBrand,handleEventClickTwo,currentUser}){
     const [events,setEvents]=useState([])
 
 useEffect (()=>{
-fetch(`http://localhost:3000/api?brand=${currentBrand.name.toLowerCase().split(" ").join("-")}&city=${currentBrand.city.toLowerCase().split(" ").join("-")}`)
+fetch(`${env.API_URL}/api?brand=${currentBrand.name.toLowerCase().split(" ").join("-")}&city=${currentBrand.city.toLowerCase().split(" ").join("-")}`)
 .then(res=> res.json())
 .then(data => setBusiness(data))
 .catch(error => setBusiness(false))
 },[])
 
 useEffect (()=>{
-fetch('http://localhost:3000/brand_events')
+fetch(`${env.API_URL}/brand_events`)
 .then(res=> res.json())
 .then(data => setEvents(data))
 .catch(error => console.error('Error:',error))

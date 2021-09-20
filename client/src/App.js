@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
+import env from "react-dotenv";
 import Header from './Header';
 import BrandContainer from './BrandContainer';
 import Signup from './Signup';
@@ -28,13 +29,13 @@ function App() {
 
 
   useEffect (() => {
-    fetch('http://localhost:3000/brands')
+    fetch(`${env.API_URL}/brands`)
     .then(res => res.json())
     .then(data => setbrands(data))
     .catch(error => console.error('Error:',error))
   },[])
   useEffect (() => {
-    fetch('http://localhost:3000/users')
+    fetch(`${env.API_URL}/users`)
     .then(res => res.json())
     .then(data => setUser(data))
     .catch(error => console.error('Error:',error))

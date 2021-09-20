@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from "react";
+import env from "react-dotenv";
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -51,7 +52,7 @@ function BrandCard({brand,HandleBrandClickTwo}){
       const[like,setLikes]=useState(brand.likes)
       console.log(brand.likes)
     function likefunction(likes){
-        fetch(`http://localhost:3000/brands/${brand.id}`,{
+        fetch(`${env.API_URL}/brands/${brand.id}`,{
             method:"PATCH",
             headers:{
                 "Content-Type":"application/json"

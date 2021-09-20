@@ -1,5 +1,6 @@
 import {useHistory} from 'react-router-dom'
   import React, {useState} from 'react';
+  import env from "react-dotenv";
   import {Input, Form} from './styled';
 
 function Signup({setCurrentUser}){
@@ -22,7 +23,7 @@ function Signup({setCurrentUser}){
         username,
         
     }
-    const res = await fetch(`http://localhost:3000/users`,{
+    const res = await fetch(`${env.API_URL}/users`,{
         method: 'POST',
         // credentials: "include",
         headers: {
@@ -76,7 +77,7 @@ function Signup({setCurrentUser}){
                     value={password}
                     name="password"
                     onChange={(e) => setPassword(e.target.value)}></Input>
-                <Input submit type="submit" value="Sign up"></Input>
+                <Input submit type="submit" value="Sign up" className="signupButton"></Input>
                 {errors?errors.map(error => <div>{error}</div>):null}
             </Form>
 </div>

@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from "@material-ui/core/Grid";
+import env from "react-dotenv";
 import moment from 'moment'
 
 const useStyles = makeStyles({
@@ -30,7 +31,7 @@ function EventCard({event,handleEventClickTwo,currentBrand,currentUser}){
           user_id: currentUser.id,
           event_id: event.id
       }
-      const res = await fetch(`http://localhost:3000/user_events`, {
+      const res = await fetch(`${env.API_URL}/user_events`, {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
