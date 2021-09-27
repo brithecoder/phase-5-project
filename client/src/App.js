@@ -29,13 +29,13 @@ function App() {
 
 
   useEffect (() => {
-    fetch(`${env.API_URL}brands`)
+    fetch(`${env.API_URL}/brands`)
     .then(res => res.json())
     .then(data => setbrands(data))
     .catch(error => console.error('Error:',error))
   },[])
   useEffect (() => {
-    fetch(`${env.API_URL}users`)
+    fetch(`${env.API_URL}/users`)
     .then(res => res.json())
     .then(data => setUser(data))
     .catch(error => console.error('Error:',error))
