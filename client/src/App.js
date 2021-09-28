@@ -29,7 +29,9 @@ function App() {
 
 
   useEffect (() => {
-    fetch(`${env.API_URL}brands`,{headers: {
+    fetch(`${env.API_URL}brands`,{
+      method: 'GET',
+      headers: {
       'Content-Type': 'application/json'
     }})
     .then(res => res.json())
@@ -37,7 +39,9 @@ function App() {
     .catch(error => console.error('Error:',error))
   },[])
   useEffect (() => {
-    fetch(`${env.API_URL}users`,{headers: {
+    fetch(`${env.API_URL}users`,{
+      method:'GET',
+      headers: {
       'Content-Type': 'application/json'
     }})
     .then(res => res.json())
