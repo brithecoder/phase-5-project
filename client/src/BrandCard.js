@@ -52,7 +52,7 @@ function BrandCard({brand,HandleBrandClickTwo}){
       const[like,setLikes]=useState(brand.likes)
       console.log(brand.likes)
     function likefunction(likes){
-        fetch(`${env.API_URL}/brands/${brand.id}`,{
+        fetch(`${env.REACT_APP_API_URL}/brands/${brand.id}`,{
             method:"PATCH",
             headers:{
                 "Content-Type":"application/json"

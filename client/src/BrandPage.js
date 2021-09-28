@@ -13,14 +13,14 @@ function BrandPage({currentBrand,handleEventClickTwo,currentUser}){
     const [events,setEvents]=useState([])
 
 useEffect (()=>{
-fetch(`${env.API_URL}/api?brand=${currentBrand.name.toLowerCase().split(" ").join("-")}&city=${currentBrand.city.toLowerCase().split(" ").join("-")}`)
+fetch(`${env.REACT_APP_API_URL}/api?brand=${currentBrand.name.toLowerCase().split(" ").join("-")}&city=${currentBrand.city.toLowerCase().split(" ").join("-")}`)
 .then(res=> res.json())
 .then(data => setBusiness(data))
 .catch(error => setBusiness(false))
 },[])
 
 useEffect (()=>{
-fetch(`${env.API_URL}/brand_events`)
+fetch(`${env.REACT_APP_API_URL}/brand_events`)
 .then(res=> res.json())
 .then(data => setEvents(data))
 .catch(error => console.error('Error:',error))

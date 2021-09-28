@@ -23,7 +23,7 @@ function Signup({setCurrentUser}){
         username,
         
     }
-    const res = await fetch(`${env.API_URL}/users`,{
+    const res = await fetch(`${env.REACT_APP_API_URL}/users`,{
         method: 'POST',
         // credentials: "include",
         headers: {

@@ -31,7 +31,7 @@ function EventCard({event,handleEventClickTwo,currentBrand,currentUser}){
           user_id: currentUser.id,
           event_id: event.id
       }
-      const res = await fetch(`${env.API_URL}/user_events`, {
+      const res = await fetch(`${env.REACT_APP_API_URL}/user_events`, {
           method: "POST",
           headers: {
               "Content-Type": "application/json"

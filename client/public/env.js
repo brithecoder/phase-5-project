@@ -1,3 +1,3 @@
 window.env = {
-  "API_URL": "https://ninalem.herokuapp.com/"
+  "REACT_APP_API_URL": "https://ninalem.herokuapp.com/"
 };
