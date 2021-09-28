@@ -15,7 +15,7 @@ function Login({setCurrentUser}){
             username:username,
             password:password
         }
-        const res = await fetch(`${env.REACT_APP_API_URL || "/"}login`,{ //=>'sessions#create'
+        const res = await fetch(`http://localhost:3000/login`,{ //=>'sessions#create'
             method: 'POST',
             // credentials: "include",
             headers: {
