@@ -12,6 +12,10 @@ import ExplorePage from './ExplorePage';
 import { NavLink, useHistory } from 'react-router-dom';
 import Navbar from './Navbar';
 import Userinfo from './Userinfo';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 import { 
   BrowserRouter as Router,
   Switch, 
@@ -90,16 +94,22 @@ function App() {
   
     
   return (
+    <Container >
     <div className="App">
     {/* <div className="Container"> */}
+    <Row>
       <Header currentUser={currentUser} onLogout={onLogout} handleNameClickTwo={handleNameClickTwo}/>
+      </Row>
       <Switch>
         <Route  exact path="/">
             {/* <Header currentUser={currentUser}/> */}
-          
+          <Row>
+            {/* <Col> */}
             <div className="logoPicture"> 
-              <h4 className="WPC"> Where People Connect</h4>
+                Where People Connect
             </div>
+            {/* </Col> */}
+            </Row>
             <div>
               <Searchbar  style={{flex:"50%"}}  setFilterState={setFilterState}/>
               <BrandContainer brands={brands.filter(filterfunction)} HandleBrandClickTwo={HandleBrandClickTwo}/>
@@ -123,6 +133,7 @@ function App() {
       </Switch>
         {/* </div> */}
     </div>
+    </Container>
   );
 }
 

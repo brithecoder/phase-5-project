@@ -6,7 +6,7 @@ function ExplorePage({brands,currentBrand,HandleBrandClickTwo }){
     return(
         <div>
            <h1 className="explorePagetitle">Explore Popular Locations</h1>
-           {brands.map((brand)=> <BrandCard key={brand.id} brand={brand} HandleBrandClickTwo={HandleBrandClickTwo}  />)}
+          <div className="ExplorepageBrands">  {brands.map((brand)=> <BrandCard key={brand.id} brand={brand} HandleBrandClickTwo={HandleBrandClickTwo}  />)} </div>
         </div>
     )
   }
