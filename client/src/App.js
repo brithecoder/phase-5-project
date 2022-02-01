@@ -106,7 +106,6 @@ function App() {
           <Row>
             {/* <Col> */}
             <div className="logoPicture"> 
-                Where People Connect
             </div>
             {/* </Col> */}
             </Row>

@@ -16,7 +16,6 @@ function Userinfo({currentUser}){
              <ul className="userInfoList">
                  <li className="userInfoList"> <p className="boldtext">Username:</p> {currentUser.username}</li>
                  <li className="userInfoList"> <p className="boldtext">Fullname:</p> {currentUser.first_name}  {currentUser.last_name}</li>
-                 <li className="userInfoList"> <p className="boldtext">Birthday:</p>{moment(currentUser.birthday).format('MMM/D/YYYY')}</li>
                  </ul>
                  </div>
                  <p className ="EventSubtitle">Events:</p>

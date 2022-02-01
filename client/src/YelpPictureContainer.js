@@ -60,11 +60,11 @@ const useStyles = makeStyles((theme) => ({
                 root: classes.titleBar,
                 title: classes.title,
               }}
-              actionIcon={
-                <IconButton aria-label={`star`}>
-                  <StarBorderIcon className={classes.title} />
-                </IconButton>
-              }
+              // actionIcon={
+              //   <IconButton aria-label={`star`}>
+              //     <StarBorderIcon className={classes.title} />
+              //   </IconButton>
+              // }
             />
           </ImageListItem>
         ))}

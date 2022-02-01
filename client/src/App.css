@@ -37,7 +37,7 @@
   font-size: 60px;
   font-weight: 700;
   color:#FFFFF0;
-  text-align:right;
+  /* text-align:right; */
   font-display: inherit;
 
   border: 5px soid black;
@@ -55,7 +55,7 @@
   background-color: #7f4107; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 22px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -72,6 +72,10 @@
 .search{
   color: #FFFFF0;
   padding-left:70px;
+}
+.noBrands{
+  color: #FFFFF0;
+  padding-bottom:30px;
 }
 .searchField{
   padding-left:70px;
